@@ -1,7 +1,7 @@
 package by.epamtraining.shapes.service;
 
-import by.epamtraining.shapes.entities.Point;
-import by.epamtraining.shapes.entities.Sphere;
+import by.epamtraining.shapes.entity.Point;
+import by.epamtraining.shapes.entity.Sphere;
 
 public class SphereService {
 

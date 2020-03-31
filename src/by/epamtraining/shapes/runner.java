@@ -1,7 +1,7 @@
 package by.epamtraining.shapes;
 
-import by.epamtraining.shapes.entities.Point;
-import by.epamtraining.shapes.entities.Sphere;
+import by.epamtraining.shapes.entity.Point;
+import by.epamtraining.shapes.entity.Sphere;
 import by.epamtraining.shapes.service.SphereService;
 
 public class runner {

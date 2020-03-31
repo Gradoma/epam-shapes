@@ -1,4 +1,4 @@
-package by.epamtraining.shapes.entities;
+package by.epamtraining.shapes.entity;
 
 import by.epamtraining.shapes.exception.IncorrectDataException;
 
@@ -92,8 +92,11 @@ public class Sphere {
 
     @Override
     public String toString() {
-        return getClass().getName() +
-                "centerPoint=" + centerPoint +
-                ", radius=" + radius;
+        StringBuilder stringBuilder = new StringBuilder(getClass().getName());
+        stringBuilder.append("centerPoint=");
+        stringBuilder.append(centerPoint);
+        stringBuilder.append(", radius=");
+        stringBuilder.append(radius);
+        return stringBuilder.toString();
     }
 }

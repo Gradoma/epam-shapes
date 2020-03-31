@@ -1,4 +1,4 @@
-package by.epamtraining.shapes.entities;
+package by.epamtraining.shapes.entity;
 
 public class Point {
     private double coordinateX;
@@ -71,9 +71,13 @@ public class Point {
 
     @Override
     public String toString() {
-        return getClass().getName() +
-                "coordinateX=" + coordinateX +
-                ", coordinateY=" + coordinateY +
-                ", coordinateZ=" + coordinateZ;
+        StringBuilder stringBuilder = new StringBuilder(getClass().getName());
+        stringBuilder.append("coordinateX=");
+        stringBuilder.append(coordinateX);
+        stringBuilder.append(", coordinateY=");
+        stringBuilder.append(coordinateY);
+        stringBuilder.append(", coordinateZ=");
+        stringBuilder.append(coordinateZ);
+        return stringBuilder.toString();
     }
 }
