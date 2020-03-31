@@ -84,7 +84,7 @@ public class Sphere {
     public int hashCode() {
         int result = id;
         int primeNumber = 31;
-        result = primeNumber * result + ((centerPoint == null) ? 0 : centerPoint.hashCode());       //null check is necessary?
+        result = primeNumber * result + ((centerPoint == null) ? 0 : centerPoint.hashCode());
         long temp = Double.doubleToLongBits(radius);
         result = primeNumber * result + (int) (temp ^ (temp >>> 32));
         return result;
