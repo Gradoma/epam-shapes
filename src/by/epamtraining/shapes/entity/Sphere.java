@@ -2,7 +2,7 @@ package by.epamtraining.shapes.entity;
 
 import by.epamtraining.shapes.exception.IncorrectDataException;
 
-public class Sphere {
+public class Sphere extends Shape{
     private int id;
     private Point centerPoint;
     private double radius;
