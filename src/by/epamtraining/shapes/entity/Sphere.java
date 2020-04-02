@@ -8,8 +8,7 @@ public class Sphere extends Shape{
     private double radius;
 
     public Sphere(){
-        double zero = 0.0;
-        centerPoint = new Point(zero, zero, zero);
+        centerPoint = new Point();
         radius = 1.0;
     }
 

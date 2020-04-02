@@ -26,12 +26,12 @@ public class SphereService {
     public double findVolumeRatio(Sphere sphere){
         double radius = sphere.getRadius();
         double distance = findMinDistanceToPlane(sphere);
-        double ratio = 1.0;
+        double ratio = 0.0;
         if (Double.compare(radius, distance) != 0) {
             double h = radius - distance;
-            double volSmallPart = Math.PI * Math.pow(h, 2.0) * (radius - (1.0 / 3.0) * h);
-            double volBigPart = findVolume(sphere) - volSmallPart;
-            ratio = volBigPart / volSmallPart;
+            double partOne = Math.PI * Math.pow(h, 2.0) * (radius - (1.0 / 3.0) * h);
+            double partTwo = findVolume(sphere) - partOne;
+            ratio = partTwo / partOne;
         }
         return Math.round(ratio);
     }

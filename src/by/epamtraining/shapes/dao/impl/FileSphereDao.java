@@ -13,7 +13,7 @@ public class FileSphereDao implements SphereDao {
     private static final String FILE_NAME = "resource/file.txt";
 
     @Override
-    public List<String> getStrings() throws IOException, DaoException{
+    public List<String> getStrings() throws DaoException{
         Path path = Paths.get(FILE_NAME);
         try{
             return Files.readAllLines(path);

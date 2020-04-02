@@ -6,10 +6,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Parser {
-    private Pattern pattern = Pattern.compile("(^\\d+?)((\\s-?\\d+?\\.?\\d{0,2}){3})\\s(\\d+?\\.?\\d{0,2})");
+    private final static Pattern SPHERE_STRING = Pattern.compile("(^\\d+?)((\\s-?\\d+?\\.?\\d{0,2}){3})\\s(\\d+?\\.?\\d{0,2})");
 
     public List<Double> parse(String string){
-        Matcher matcher = pattern.matcher(string);
+        Matcher matcher = SPHERE_STRING.matcher(string);
         List<Double> values = null;
         if(matcher.matches()){
             values = getValueList(matcher.group(2).trim());
@@ -20,7 +20,7 @@ public class Parser {
     }
 
     public int parseId (String string){
-        Matcher matcher = pattern.matcher(string);
+        Matcher matcher = SPHERE_STRING.matcher(string);
         int id = -1;
         if (matcher.matches()){
             String stringId = matcher.group(1);
