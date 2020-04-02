@@ -6,5 +6,5 @@ import java.io.IOException;
 import java.util.List;
 
 public interface SphereDao {
-    List<String> getStrings() throws IOException, DaoException;
+    List<String> getStrings(String fileName) throws IOException, DaoException;
 }
