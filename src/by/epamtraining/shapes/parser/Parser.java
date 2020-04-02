@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class Parser {
     private final static Pattern SPHERE_STRING = Pattern.compile("(^\\d+?)((\\s-?\\d+?\\.?\\d{0,2}){3})\\s(\\d+?\\.?\\d{0,2})");
 
-    public List<Double> parse(String string){
+    public List<Double> parseValue(String string){
         Matcher matcher = SPHERE_STRING.matcher(string);
         List<Double> values = null;
         if(matcher.matches()){

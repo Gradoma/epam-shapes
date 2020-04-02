@@ -16,7 +16,7 @@ public class runner {
     public static void main(String[] args) throws Exception{
 
         SphereDao dao = new FileSphereDao();
-        List<String> list = dao.getStrings();
+        List<String> list = dao.getStrings("examplefile.txt");
 
         Validator validator = new Validator();
         List<String> updList = validator.checkList(list);
@@ -28,10 +28,10 @@ public class runner {
                 continue;
             }
             int id = parser.parseId(s);
-            if (parser.parse(s) == null){
+            if (parser.parseValue(s) == null){
                 continue;
             }
-            List<Double> valuesList = parser.parse(s);
+            List<Double> valuesList = parser.parseValue(s);
             double xCoordinate = valuesList.get(0);
             double yCoordinate = valuesList.get(1);
             double zCoordinate = valuesList.get(2);

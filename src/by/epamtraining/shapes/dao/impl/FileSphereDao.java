@@ -14,11 +14,14 @@ public class FileSphereDao implements SphereDao {
 
     @Override
     public List<String> getStrings(String fileName) throws DaoException{
+        if (fileName == null){
+            throw new DaoException(" file name is null");
+        }
         Path path;
         if (Files.exists(Paths.get(fileName))) {
             path = Paths.get(fileName);
         } else {
-            path = Paths.get(DEFAULT_FILENAME);
+            path = Paths.get(DEFAULT_FILENAME);         // как тестировать?
         }
         try{
             return Files.readAllLines(path);
