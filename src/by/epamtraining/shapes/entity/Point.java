@@ -72,7 +72,7 @@ public class Point {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder(getClass().getName());
-        stringBuilder.append("coordinateX=");
+        stringBuilder.append(": coordinateX=");
         stringBuilder.append(coordinateX);
         stringBuilder.append(", coordinateY=");
         stringBuilder.append(coordinateY);

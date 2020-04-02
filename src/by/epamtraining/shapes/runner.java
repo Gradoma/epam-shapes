@@ -39,6 +39,12 @@ public class runner {
             Shape sphere = factory.create(id, xCoordinate, yCoordinate, zCoordinate, radius);
             sphereHolderList.addSphereToList((Sphere) sphere);
         }
-        System.out.println(sphereHolderList.getSphereList());
+        for (int i=0; i<sphereHolderList.getSphereList().size(); i++){
+            Sphere s = sphereHolderList.getSphereList().get(i);
+            System.out.print(s.getId() + " ");
+            System.out.print(s.getCenterPoint() + " ");
+            System.out.print(s.getRadius() + "\n");
+        }
+
     }
 }

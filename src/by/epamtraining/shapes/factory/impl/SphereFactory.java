@@ -13,6 +13,7 @@ public class SphereFactory implements ShapeFactory {
         Shape sphere = null;
         try{
             sphere = new Sphere(centerPoint, radius);
+            sphere.setId(id);
         } catch (IncorrectDataException e){
             e.printStackTrace();
         }
