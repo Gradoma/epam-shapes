@@ -1,16 +1,23 @@
 package by.epamtraining.shapes.entity;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Point {
     private double coordinateX;
     private double coordinateY;
     private double coordinateZ;
+    private static Logger logger = LogManager.getLogger();
 
-    public Point(){}
+    public Point(){
+        logger.debug("default Point was created");
+    }
 
     public Point(double coordinateX, double coordinateY, double coordinateZ){
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
         this.coordinateZ = coordinateZ;
+        logger.debug("Point with define coordinates was created");
     }
 
     public double getCoordinateX() {

@@ -1,20 +1,25 @@
 package by.epamtraining.shapes.entity;
 
 import by.epamtraining.shapes.exception.IncorrectDataException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Sphere extends Shape{
     private int id;
     private Point centerPoint;
     private double radius;
+    private static Logger logger = LogManager.getLogger();
 
     public Sphere(){
         centerPoint = new Point();
         radius = 1.0;
+        logger.debug("default Sphere was created, radius = " + radius + " , center point = " + centerPoint);
     }
 
     public Sphere(Point centerPoint, double radius) throws IncorrectDataException{
         setCenterPoint(centerPoint);
         setRadius(radius);
+        logger.debug("Sphere with define parameters was created, radius = " + radius + " , center point = " + centerPoint);
     }
 
     public int getId() {
@@ -34,22 +39,26 @@ public class Sphere extends Shape{
     }
 
     public void setCenterPoint(Point centerPoint) throws IncorrectDataException{
-        if(centerPoint != null){
+        if(centerPoint == null){
+            logger.fatal("Point centerPoint is null");
+            throw new IncorrectDataException("null reference to Point object");
+        } else {
+
             double x = centerPoint.getCoordinateX();
             double y = centerPoint.getCoordinateY();
             double z = centerPoint.getCoordinateZ();
             this.centerPoint = new Point(x, y, z);
-            this.centerPoint = centerPoint;
-        } else {
-            throw new IncorrectDataException("null reference to Point object");
+            logger.info("center point was set, center point: " + this.centerPoint);
+//            this.centerPoint = centerPoint;       //is wrong??
         }
-
     }
 
     public void setRadius(double radius) throws IncorrectDataException {
         if(radius > 0.0){
             this.radius = radius;
+            logger.info("center point was set, center point: " + radius);
         } else {
+            logger.fatal("radius less or equal zero");
             throw new IncorrectDataException("radius less or equal zero");
         }
     }
