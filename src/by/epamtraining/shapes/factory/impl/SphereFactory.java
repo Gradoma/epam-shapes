@@ -18,11 +18,11 @@ public class SphereFactory implements ShapeFactory {
     @Override
     public Shape create(List<Double> values) throws SphereFactoryCreateException {
         logger.debug("parameters: " + values);
-        double centerX = values.get(1);
-        double centerY = values.get(2);
-        double centerZ = values.get(3);
+        double centerX = values.get(0);
+        double centerY = values.get(1);
+        double centerZ = values.get(2);
         Point centerPoint = new Point(centerX, centerY, centerZ);
-        double radius = values.get(4);
+        double radius = values.get(3);
         Shape sphere;
         try {
             sphere = new Sphere(centerPoint, radius);

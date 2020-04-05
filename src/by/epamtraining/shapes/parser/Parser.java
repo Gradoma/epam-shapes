@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Parser {
-    private final static Pattern SPHERE_STRING = Pattern.compile("((\\d+?\\.?\\d{0,2}\\s){3})(\\d+?\\.?\\d{0,2})");
+    private final static Pattern SPHERE_STRING = Pattern.compile("((-?\\d+?\\.?\\d{0,2}\\s){3})(\\d+?\\.?\\d{0,2})");
     private final static String DELIMITER = " ";
     private static Logger logger = LogManager.getLogger();
 

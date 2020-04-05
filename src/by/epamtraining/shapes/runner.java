@@ -16,24 +16,15 @@ public class runner {
     public static void main(String[] args) throws Exception{
 
         SphereDao dao = new FileSphereDao();
-        List<String> list = dao.getStrings("examplefile.txt");
-
-        Validator validator = new Validator();
-        List<String> updatedList = validator.checkList(list);
+        List<String> list = dao.getStrings("resource/file.txt");
+        
         Parser parser = new Parser();
+        List<List<Double>> allSpheres = parser.parseValue(list);
         ShapeFactory factory = new SphereFactory();
         SphereHolderList sphereHolderList = SphereHolderList.getInstance();
-        for (String s : updatedList){
-            if (parser.parseValue(s) == null){
-                continue;
-            }
-            List<Double> valuesList = parser.parseValue(s);
-            double xCoordinate = valuesList.get(0);
-            double yCoordinate = valuesList.get(1);
-            double zCoordinate = valuesList.get(2);
-            double radius = valuesList.get(3);
-            int id = 1;
-            Shape sphere = factory.create(id, xCoordinate, yCoordinate, zCoordinate, radius);
+
+        for (List<Double> valuesList: allSpheres){
+            Shape sphere = factory.create(valuesList);
             sphereHolderList.addSphereToList((Sphere) sphere);
         }
         for (int i=0; i<sphereHolderList.getSphereList().size(); i++){
