@@ -2,6 +2,7 @@ package by.epamtraining.shapes.dao.impl;
 
 import by.epamtraining.shapes.dao.SphereDao;
 import by.epamtraining.shapes.exception.DaoException;
+import by.epamtraining.shapes.validation.FileValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,13 +24,15 @@ public class FileSphereDao implements SphereDao {
             throw new DaoException(" file name is null");
         }
         Path path;
-        if (Files.exists(Paths.get(fileName))) {
+        FileValidator fileValidator = new FileValidator();
+        if (fileValidator.isFileExist(fileName)) {
             logger.info("file was founded");
             path = Paths.get(fileName);
         } else {
             logger.info("file wasn't found, try to read default file: " + DEFAULT_FILENAME);
-            path = Paths.get(DEFAULT_FILENAME);         // как тестировать?
+            path = Paths.get(DEFAULT_FILENAME);         // КАК ТЕСТИРОВАТЬ ????
         }
+
         try{
             logger.info("read all lines was successful");
             return Files.readAllLines(path);

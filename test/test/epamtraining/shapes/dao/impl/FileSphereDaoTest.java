@@ -24,7 +24,7 @@ public class FileSphereDaoTest {
     @Test
     public void testGetStringsPositive() {
         String path = "test_resource/testfile.txt";
-        String[] expectedArr = {"1", "abc", "3"};
+        String[] expectedArr = {};
         List<String> expected = Arrays.asList(expectedArr);
         List<String> actual;
             try{

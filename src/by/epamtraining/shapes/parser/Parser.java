@@ -9,40 +9,30 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Parser {
-    private final static Pattern SPHERE_STRING = Pattern.compile("(^\\d+?)((\\s-?\\d+?\\.?\\d{0,2}){3})\\s(\\d+?\\.?\\d{0,2})");
+    private final static Pattern SPHERE_STRING = Pattern.compile("((\\d+?\\.?\\d{0,2}\\s){3})(\\d+?\\.?\\d{0,2})");
+    private final static String DELIMITER = " ";
     private static Logger logger = LogManager.getLogger();
 
-    public List<Double> parseValue(String string){
-        logger.debug("parameter: String for parsing: " + string);
-        Matcher matcher = SPHERE_STRING.matcher(string);
-        List<Double> values = null;
-        if(matcher.matches()){
-            logger.info("String was matched successful");
-            values = getValueList(matcher.group(2).trim());
-            Double radiusValue = Double.parseDouble(matcher.group(4));
-            values.add(radiusValue);
+    public List<List<Double>> parseValue(List<String> listString){
+        logger.debug("parameter: String for parsing: " + listString);
+        List<List<Double>> sphereValuesList = new ArrayList<List<Double>>();
+        Matcher matcher;
+        for (String s : listString){
+            matcher = SPHERE_STRING.matcher(s);
+            if(matcher.matches()){
+                logger.info("String was matched successful");
+                List<Double> values = collectValues(s);
+                sphereValuesList.add(values);
+            }
         }
-        logger.info("result List parameters for Sphere creation: " + values);
-        return values;
+        logger.info("result List parameters for Sphere creation: " + sphereValuesList);
+        return sphereValuesList;
     }
 
-    public int parseId (String string){
-        logger.debug("parameter: String: " + string);
-        Matcher matcher = SPHERE_STRING.matcher(string);
-        int id = -1;
-        if (matcher.matches()){
-            logger.info("String was matched successful");
-            String stringId = matcher.group(1);
-            id = Integer.parseInt(stringId);
-        }
-        logger.info("id = " + id);
-        return id;
-    }
-
-    private List<Double> getValueList(String string){
+    private List<Double> collectValues(String string){
         logger.debug("parameter: String with values: " + string);
         List<Double> valuesList = new ArrayList<>();
-        String[] valuesArr = string.split(" ");
+        String[] valuesArr = string.split(DELIMITER);
         for (String s: valuesArr){
             valuesList.add(Double.parseDouble(s));
         }

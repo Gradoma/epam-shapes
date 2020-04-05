@@ -19,15 +19,11 @@ public class runner {
         List<String> list = dao.getStrings("examplefile.txt");
 
         Validator validator = new Validator();
-        List<String> updList = validator.checkList(list);
+        List<String> updatedList = validator.checkList(list);
         Parser parser = new Parser();
         ShapeFactory factory = new SphereFactory();
         SphereHolderList sphereHolderList = SphereHolderList.getInstance();
-        for (String s : updList){
-            if (parser.parseId(s) < 0){
-                continue;
-            }
-            int id = parser.parseId(s);
+        for (String s : updatedList){
             if (parser.parseValue(s) == null){
                 continue;
             }
@@ -36,6 +32,7 @@ public class runner {
             double yCoordinate = valuesList.get(1);
             double zCoordinate = valuesList.get(2);
             double radius = valuesList.get(3);
+            int id = 1;
             Shape sphere = factory.create(id, xCoordinate, yCoordinate, zCoordinate, radius);
             sphereHolderList.addSphereToList((Sphere) sphere);
         }

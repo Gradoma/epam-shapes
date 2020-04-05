@@ -5,7 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Sphere extends Shape{
-    private int id;
+    private long id;
     private Point centerPoint;
     private double radius;
     private static Logger logger = LogManager.getLogger();
@@ -22,7 +22,7 @@ public class Sphere extends Shape{
         logger.debug("Sphere with define parameters was created, radius = " + radius + " , center point = " + centerPoint);
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -34,7 +34,7 @@ public class Sphere extends Shape{
         return radius;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -90,7 +90,7 @@ public class Sphere extends Shape{
 
     @Override
     public int hashCode() {
-        int result = id;
+        int result = (int) id;
         int primeNumber = 31;
         result = primeNumber * result + ((centerPoint == null) ? 0 : centerPoint.hashCode());
         long temp = Double.doubleToLongBits(radius);

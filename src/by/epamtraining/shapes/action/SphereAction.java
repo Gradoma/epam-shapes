@@ -1,9 +1,9 @@
-package by.epamtraining.shapes.service;
+package by.epamtraining.shapes.action;
 
 import by.epamtraining.shapes.entity.Point;
 import by.epamtraining.shapes.entity.Sphere;
 
-public class SphereService {
+public class SphereAction {
 
     public double findSurfaceSquare(Sphere sphere){
         double radius = sphere.getRadius();

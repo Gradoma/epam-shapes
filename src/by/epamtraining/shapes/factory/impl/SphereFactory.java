@@ -6,24 +6,34 @@ import by.epamtraining.shapes.entity.Sphere;
 import by.epamtraining.shapes.exception.IncorrectDataException;
 import by.epamtraining.shapes.exception.SphereFactoryCreateException;
 import by.epamtraining.shapes.factory.ShapeFactory;
+import by.epamtraining.shapes.util.IdGenerator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.List;
 
 public class SphereFactory implements ShapeFactory {
     private static Logger logger = LogManager.getLogger();
 
     @Override
-    public Shape create(int id, double centerX, double centerY, double centerZ, double radius) throws SphereFactoryCreateException{
-        logger.debug("parameters: id=" + id + ", centerX=" + centerX + ", centerY=" + centerY + ", centerZ=" + centerZ + ", radius=" + radius);
+    public Shape create(List<Double> values) throws SphereFactoryCreateException {
+        logger.debug("parameters: " + values);
+        double centerX = values.get(1);
+        double centerY = values.get(2);
+        double centerZ = values.get(3);
         Point centerPoint = new Point(centerX, centerY, centerZ);
-        try{
-            Shape sphere = new Sphere(centerPoint, radius);
-            sphere.setId(id);
+        double radius = values.get(4);
+        Shape sphere;
+        try {
+            sphere = new Sphere(centerPoint, radius);
             logger.info("Sphere was created, sphere.id=" + sphere.getId());
-            return sphere;
-        } catch (IncorrectDataException e){
+        } catch (IncorrectDataException e) {
             logger.fatal("IncorrectDataException was thrown");
             throw new SphereFactoryCreateException(e);
         }
+        IdGenerator generator = new IdGenerator();
+        long id = generator.generateId();
+        sphere.setId(id);
+        return sphere;
     }
 }

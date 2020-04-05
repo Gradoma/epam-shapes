@@ -35,20 +35,4 @@ public class ParserTest {
         List<Double> actualValues = parser.parseValue(testString);
         Assert.assertEquals(expectedValues, actualValues);
     }
-
-    @Test
-    public void testParseId() {
-        String testString = "12 2.5 -3.7 8 12.4";
-        int expectedId = 12;
-        int actualId = parser.parseId(testString);
-        Assert.assertEquals(expectedId, actualId);
-    }
-
-    @Test
-    public void testParseIdIncorrectString() {
-        String testString = "12 2.5 abc 12.4";
-        int expectedId = -1;
-        int actualId = parser.parseId(testString);
-        Assert.assertEquals(expectedId, actualId);
-    }
 }
