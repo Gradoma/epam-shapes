@@ -1,6 +1,6 @@
-package by.epamtraining.shapes.dao.impl;
+package by.epamtraining.shapes.reader.impl;
 
-import by.epamtraining.shapes.dao.SphereDao;
+import by.epamtraining.shapes.reader.SphereReader;
 import by.epamtraining.shapes.exception.DaoException;
 import by.epamtraining.shapes.validation.FileValidator;
 import org.apache.logging.log4j.LogManager;
@@ -12,7 +12,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class FileSphereDao implements SphereDao {
+public class FileSphereReader implements SphereReader {
     private static final String DEFAULT_FILENAME = "resource/file.txt";
     private static Logger logger = LogManager.getLogger();
 

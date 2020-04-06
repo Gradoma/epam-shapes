@@ -1,24 +1,20 @@
 package test.epamtraining.shapes.dao.impl;
 
-import by.epamtraining.shapes.dao.impl.FileSphereDao;
+import by.epamtraining.shapes.reader.impl.FileSphereReader;
 import by.epamtraining.shapes.exception.DaoException;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
-import static org.testng.Assert.*;
-
-public class FileSphereDaoTest {
-    FileSphereDao fileSphereDao;
+public class FileSphereReaderTest {
+    FileSphereReader fileSphereDao;
 
     @BeforeClass
     public void setUp(){
-        fileSphereDao = new FileSphereDao();
+        fileSphereDao = new FileSphereReader();
     }
 
     @Test

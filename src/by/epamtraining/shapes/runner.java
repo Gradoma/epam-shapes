@@ -1,21 +1,20 @@
 package by.epamtraining.shapes;
 
-import by.epamtraining.shapes.dao.SphereDao;
-import by.epamtraining.shapes.dao.impl.FileSphereDao;
+import by.epamtraining.shapes.reader.SphereReader;
+import by.epamtraining.shapes.reader.impl.FileSphereReader;
 import by.epamtraining.shapes.entity.Shape;
 import by.epamtraining.shapes.entity.Sphere;
 import by.epamtraining.shapes.factory.ShapeFactory;
 import by.epamtraining.shapes.factory.SphereHolderList;
 import by.epamtraining.shapes.factory.impl.SphereFactory;
 import by.epamtraining.shapes.parser.Parser;
-import by.epamtraining.shapes.validation.Validator;
 
 import java.util.List;
 
 public class runner {
     public static void main(String[] args) throws Exception{
 
-        SphereDao dao = new FileSphereDao();
+        SphereReader dao = new FileSphereReader();
         List<String> list = dao.getStrings("resource/file.txt");
         
         Parser parser = new Parser();
