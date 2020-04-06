@@ -1,0 +1,170 @@
+2020-04-03 19:14:10 [main] DEBUG epamtraining.shapes.dao.impl.FileSphereDao - parameter: Sting fileName: examplefile.txt
+2020-04-03 19:14:10 [main] INFO  epamtraining.shapes.dao.impl.FileSphereDao - file wasn't found, try to read default file: resource/file.txt
+2020-04-03 19:14:10 [main] INFO  epamtraining.shapes.dao.impl.FileSphereDao - read all lines was successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 1 5.0 5.0 5.0 1.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = 1
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 1 5.0 5.0 5.0 1.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = 1
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String for parsing: 1 5.0 5.0 5.0 1.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String with values: 5.0 5.0 5.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List of values: [5.0, 5.0, 5.0]
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List parameters for Sphere creation: [5.0, 5.0, 5.0, 1.0]
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String for parsing: 1 5.0 5.0 5.0 1.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String with values: 5.0 5.0 5.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List of values: [5.0, 5.0, 5.0]
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List parameters for Sphere creation: [5.0, 5.0, 5.0, 1.0]
+2020-04-03 19:14:10 [main] DEBUG epamtraining.shapes.factory.impl.SphereFactory - parameters: id=1, centerX=5.0, centerY=5.0, centerZ=5.0, radius=1.0
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: by.epamtraining.shapes.entity.Point: coordinateX=5.0, coordinateY=5.0, coordinateZ=5.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: 1.0
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Sphere - Sphere with define parameters was created, radius = 1.0 , center point = by.epamtraining.shapes.entity.Point: coordinateX=5.0, coordinateY=5.0, coordinateZ=5.0
+2020-04-03 19:14:10 [main] INFO  epamtraining.shapes.factory.impl.SphereFactory - Sphere was created, sphere.id=1
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 2 2.0 6.0 5.0 4.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = 2
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 2 2.0 6.0 5.0 4.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = 2
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String for parsing: 2 2.0 6.0 5.0 4.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String with values: 2.0 6.0 5.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List of values: [2.0, 6.0, 5.0]
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List parameters for Sphere creation: [2.0, 6.0, 5.0, 4.0]
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String for parsing: 2 2.0 6.0 5.0 4.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String with values: 2.0 6.0 5.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List of values: [2.0, 6.0, 5.0]
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List parameters for Sphere creation: [2.0, 6.0, 5.0, 4.0]
+2020-04-03 19:14:10 [main] DEBUG epamtraining.shapes.factory.impl.SphereFactory - parameters: id=2, centerX=2.0, centerY=6.0, centerZ=5.0, radius=4.0
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: by.epamtraining.shapes.entity.Point: coordinateX=2.0, coordinateY=6.0, coordinateZ=5.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: 4.0
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Sphere - Sphere with define parameters was created, radius = 4.0 , center point = by.epamtraining.shapes.entity.Point: coordinateX=2.0, coordinateY=6.0, coordinateZ=5.0
+2020-04-03 19:14:10 [main] INFO  epamtraining.shapes.factory.impl.SphereFactory - Sphere was created, sphere.id=2
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 3 -3.0 -3.0 -3.0 3
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = 3
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 3 -3.0 -3.0 -3.0 3
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = 3
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String for parsing: 3 -3.0 -3.0 -3.0 3
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String with values: -3.0 -3.0 -3.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List of values: [-3.0, -3.0, -3.0]
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List parameters for Sphere creation: [-3.0, -3.0, -3.0, 3.0]
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String for parsing: 3 -3.0 -3.0 -3.0 3
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String with values: -3.0 -3.0 -3.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List of values: [-3.0, -3.0, -3.0]
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List parameters for Sphere creation: [-3.0, -3.0, -3.0, 3.0]
+2020-04-03 19:14:10 [main] DEBUG epamtraining.shapes.factory.impl.SphereFactory - parameters: id=3, centerX=-3.0, centerY=-3.0, centerZ=-3.0, radius=3.0
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: by.epamtraining.shapes.entity.Point: coordinateX=-3.0, coordinateY=-3.0, coordinateZ=-3.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: 3.0
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Sphere - Sphere with define parameters was created, radius = 3.0 , center point = by.epamtraining.shapes.entity.Point: coordinateX=-3.0, coordinateY=-3.0, coordinateZ=-3.0
+2020-04-03 19:14:10 [main] INFO  epamtraining.shapes.factory.impl.SphereFactory - Sphere was created, sphere.id=3
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 4 5 -4 -7.5 11
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = 4
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 4 5 -4 -7.5 11
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = 4
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String for parsing: 4 5 -4 -7.5 11
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String with values: 5 -4 -7.5
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List of values: [5.0, -4.0, -7.5]
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List parameters for Sphere creation: [5.0, -4.0, -7.5, 11.0]
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String for parsing: 4 5 -4 -7.5 11
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String with values: 5 -4 -7.5
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List of values: [5.0, -4.0, -7.5]
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List parameters for Sphere creation: [5.0, -4.0, -7.5, 11.0]
+2020-04-03 19:14:10 [main] DEBUG epamtraining.shapes.factory.impl.SphereFactory - parameters: id=4, centerX=5.0, centerY=-4.0, centerZ=-7.5, radius=11.0
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: by.epamtraining.shapes.entity.Point: coordinateX=5.0, coordinateY=-4.0, coordinateZ=-7.5
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: 11.0
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Sphere - Sphere with define parameters was created, radius = 11.0 , center point = by.epamtraining.shapes.entity.Point: coordinateX=5.0, coordinateY=-4.0, coordinateZ=-7.5
+2020-04-03 19:14:10 [main] INFO  epamtraining.shapes.factory.impl.SphereFactory - Sphere was created, sphere.id=4
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 5t 10.0 11.0 1.0 4.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = -1
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 6 4.0 0 7.2 2.5
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = 6
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 6 4.0 0 7.2 2.5
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = 6
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String for parsing: 6 4.0 0 7.2 2.5
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String with values: 4.0 0 7.2
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List of values: [4.0, 0.0, 7.2]
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List parameters for Sphere creation: [4.0, 0.0, 7.2, 2.5]
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String for parsing: 6 4.0 0 7.2 2.5
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String with values: 4.0 0 7.2
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List of values: [4.0, 0.0, 7.2]
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List parameters for Sphere creation: [4.0, 0.0, 7.2, 2.5]
+2020-04-03 19:14:10 [main] DEBUG epamtraining.shapes.factory.impl.SphereFactory - parameters: id=6, centerX=4.0, centerY=0.0, centerZ=7.2, radius=2.5
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: by.epamtraining.shapes.entity.Point: coordinateX=4.0, coordinateY=0.0, coordinateZ=7.2
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: 2.5
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Sphere - Sphere with define parameters was created, radius = 2.5 , center point = by.epamtraining.shapes.entity.Point: coordinateX=4.0, coordinateY=0.0, coordinateZ=7.2
+2020-04-03 19:14:10 [main] INFO  epamtraining.shapes.factory.impl.SphereFactory - Sphere was created, sphere.id=6
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 7 3.5 7.5 2.5 -4.2
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = -1
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 8 4.2 3.0 2.5
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = -1
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 9 0.0 0.0 0.0 5.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = 9
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 9 0.0 0.0 0.0 5.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = 9
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String for parsing: 9 0.0 0.0 0.0 5.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String with values: 0.0 0.0 0.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List of values: [0.0, 0.0, 0.0]
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List parameters for Sphere creation: [0.0, 0.0, 0.0, 5.0]
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String for parsing: 9 0.0 0.0 0.0 5.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String with values: 0.0 0.0 0.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List of values: [0.0, 0.0, 0.0]
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List parameters for Sphere creation: [0.0, 0.0, 0.0, 5.0]
+2020-04-03 19:14:10 [main] DEBUG epamtraining.shapes.factory.impl.SphereFactory - parameters: id=9, centerX=0.0, centerY=0.0, centerZ=0.0, radius=5.0
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: by.epamtraining.shapes.entity.Point: coordinateX=0.0, coordinateY=0.0, coordinateZ=0.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: 5.0
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Sphere - Sphere with define parameters was created, radius = 5.0 , center point = by.epamtraining.shapes.entity.Point: coordinateX=0.0, coordinateY=0.0, coordinateZ=0.0
+2020-04-03 19:14:10 [main] INFO  epamtraining.shapes.factory.impl.SphereFactory - Sphere was created, sphere.id=9
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 10 2.5 3.5 4.5 3.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = 10
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String: 10 2.5 3.5 4.5 3.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - id = 10
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String for parsing: 10 2.5 3.5 4.5 3.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String with values: 2.5 3.5 4.5
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List of values: [2.5, 3.5, 4.5]
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List parameters for Sphere creation: [2.5, 3.5, 4.5, 3.0]
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String for parsing: 10 2.5 3.5 4.5 3.0
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - String was matched successful
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.parser.Parser - parameter: String with values: 2.5 3.5 4.5
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List of values: [2.5, 3.5, 4.5]
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.parser.Parser - result List parameters for Sphere creation: [2.5, 3.5, 4.5, 3.0]
+2020-04-03 19:14:10 [main] DEBUG epamtraining.shapes.factory.impl.SphereFactory - parameters: id=10, centerX=2.5, centerY=3.5, centerZ=4.5, radius=3.0
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: by.epamtraining.shapes.entity.Point: coordinateX=2.5, coordinateY=3.5, coordinateZ=4.5
+2020-04-03 19:14:10 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: 3.0
+2020-04-03 19:14:10 [main] DEBUG by.epamtraining.shapes.entity.Sphere - Sphere with define parameters was created, radius = 3.0 , center point = by.epamtraining.shapes.entity.Point: coordinateX=2.5, coordinateY=3.5, coordinateZ=4.5
+2020-04-03 19:14:10 [main] INFO  epamtraining.shapes.factory.impl.SphereFactory - Sphere was created, sphere.id=10

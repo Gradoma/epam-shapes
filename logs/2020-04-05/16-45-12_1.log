@@ -1,0 +1,3 @@
+2020-04-05 16:45:12 [main] DEBUG epamtraining.shapes.dao.impl.FileSphereDao - parameter: Sting fileName: test_resource/testfile.txt
+2020-04-05 16:45:12 [main] INFO  epamtraining.shapes.dao.impl.FileSphereDao - file was founded
+2020-04-05 16:45:12 [main] INFO  epamtraining.shapes.dao.impl.FileSphereDao - read all lines was successful
