@@ -17,8 +17,14 @@ public class Sphere extends Shape{
     }
 
     public Sphere(Point centerPoint, double radius) throws IncorrectDataException{
-        setCenterPoint(centerPoint);
-        setRadius(radius);
+        if(centerPoint == null || radius <= 0){
+            throw new IncorrectDataException("invalid data for sphere creation");
+        }
+        double x = centerPoint.getCoordinateX();
+        double y = centerPoint.getCoordinateY();
+        double z = centerPoint.getCoordinateZ();
+        this.centerPoint = new Point(x, y, z);
+        this.radius = radius;
         logger.debug("Sphere with define parameters was created, radius = " + radius + " , center point = " + centerPoint);
     }
 
@@ -49,7 +55,6 @@ public class Sphere extends Shape{
             double z = centerPoint.getCoordinateZ();
             this.centerPoint = new Point(x, y, z);
             logger.info("center point was set, center point: " + this.centerPoint);
-//            this.centerPoint = centerPoint;       //is wrong??
         }
     }
 
