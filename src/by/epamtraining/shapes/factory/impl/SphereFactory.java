@@ -6,7 +6,7 @@ import by.epamtraining.shapes.entity.Sphere;
 import by.epamtraining.shapes.exception.IncorrectDataException;
 import by.epamtraining.shapes.exception.SphereFactoryCreateException;
 import by.epamtraining.shapes.factory.ShapeFactory;
-import by.epamtraining.shapes.util.IdGenerator;
+import by.epamtraining.shapes.util.generator.IdGenerator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
