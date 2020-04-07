@@ -12,6 +12,7 @@ import by.epamtraining.shapes.parser.Parser;
 import by.epamtraining.shapes.repository.RadiusSpecification;
 import by.epamtraining.shapes.repository.Specification;
 import by.epamtraining.shapes.repository.SphereRepository;
+import by.epamtraining.shapes.warehouse.WarehouseObserver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,8 @@ public class runner {
 //            System.out.print(s.getRadius() + "\n");
 //        }
         runner runner = new runner();
+        WarehouseObserver warehouseObserver = new WarehouseObserver();
+
         List<Double> testValue1 = new ArrayList<>();
         testValue1.add(2.5);
         testValue1.add(3.5);
@@ -45,6 +48,7 @@ public class runner {
         testValue1.add(10.0);
         SphereFactory factory = new SphereFactory();
         Sphere sphere1 = (Sphere) factory.create(testValue1);
+        sphere1.attach(warehouseObserver);
 
         List<Double> testValue2 = new ArrayList<>();
         testValue2.add(2.5);
@@ -52,6 +56,7 @@ public class runner {
         testValue2.add(5.2);
         testValue2.add(15.4);
         Sphere sphere2 = (Sphere) factory.create(testValue2);
+        sphere2.attach(warehouseObserver);
 
         SphereRepository repo = SphereRepository.getInstance();
         repo.addSphere(sphere1);
@@ -63,8 +68,11 @@ public class runner {
         Sphere targetSphere = testSphereList.get(0);
         System.out.println(targetSphere);           // target print
 
-        long targetId = 3;
+        long targetId = targetSphere.getId();
         repo.changeSphere(targetId, 255.2);
+
+        Point testPoint = new Point(-15.5, 187.25, 35.66);
+        repo.changeSphere(1, testPoint);
 
         System.out.println("repo after changes: ");      //test print
         runner.printList(repo.sphereList);

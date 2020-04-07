@@ -1,14 +1,21 @@
 package by.epamtraining.shapes.entity;
 
 import by.epamtraining.shapes.exception.IncorrectDataException;
+import by.epamtraining.shapes.util.observer.Observable;
+import by.epamtraining.shapes.util.observer.Observer;
+import by.epamtraining.shapes.util.observer.SphereEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Sphere extends Shape{
+import java.util.ArrayList;
+import java.util.List;
+
+public class Sphere extends Shape implements Observable {
     private long id;
     private Point centerPoint;
     private double radius;
     private static Logger logger = LogManager.getLogger();
+    private List<Observer> observerList = new ArrayList<>();
 
     public Sphere(){
         centerPoint = new Point();
@@ -42,6 +49,7 @@ public class Sphere extends Shape{
 
     public void setId(long id) {
         this.id = id;
+        notifyObserver();
     }
 
     public void setCenterPoint(Point centerPoint) throws IncorrectDataException{
@@ -49,12 +57,12 @@ public class Sphere extends Shape{
             logger.fatal("Point centerPoint is null");
             throw new IncorrectDataException("null reference to Point object");
         } else {
-
             double x = centerPoint.getCoordinateX();
             double y = centerPoint.getCoordinateY();
             double z = centerPoint.getCoordinateZ();
             this.centerPoint = new Point(x, y, z);
             logger.info("center point was set, center point: " + this.centerPoint);
+            notifyObserver();
         }
     }
 
@@ -62,10 +70,31 @@ public class Sphere extends Shape{
         if(radius > 0.0){
             this.radius = radius;
             logger.info("center point was set, center point: " + radius);
+            notifyObserver();
         } else {
             logger.fatal("radius less or equal zero");
             throw new IncorrectDataException("radius less or equal zero");
         }
+    }
+
+    @Override
+    public void attach(Observer observer){
+        observerList.add(observer);
+    }
+
+    @Override
+    public void detach(Observer observer){
+        observerList.remove(observer);
+    }
+
+    @Override
+    public void notifyObserver(){
+        if (!observerList.isEmpty()){
+            for (Observer current: observerList){
+                current.update(new SphereEvent(this));
+            }
+        }
+
     }
 
     @Override
