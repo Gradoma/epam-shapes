@@ -94,7 +94,6 @@ public class Sphere extends Shape implements Observable {
                 current.update(new SphereEvent(this));
             }
         }
-
     }
 
     @Override

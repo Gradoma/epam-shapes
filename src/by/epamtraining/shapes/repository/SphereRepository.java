@@ -9,7 +9,7 @@ import java.util.List;
 
 public class SphereRepository {
     private static final SphereRepository instance = new SphereRepository();
-    private final List<Sphere> sphereList = new ArrayList<>();
+    public final List<Sphere> sphereList = new ArrayList<>();
 
     private SphereRepository(){}
 

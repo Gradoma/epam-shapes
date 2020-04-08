@@ -12,6 +12,7 @@ import by.epamtraining.shapes.parser.Parser;
 import by.epamtraining.shapes.repository.RadiusSpecification;
 import by.epamtraining.shapes.repository.Specification;
 import by.epamtraining.shapes.repository.SphereRepository;
+import by.epamtraining.shapes.warehouse.Warehouse;
 import by.epamtraining.shapes.warehouse.WarehouseObserver;
 
 import java.util.ArrayList;
@@ -47,32 +48,39 @@ public class runner {
         testValue1.add(5.2);
         testValue1.add(10.0);
         SphereFactory factory = new SphereFactory();
-        Sphere sphere1 = (Sphere) factory.create(testValue1);
-        sphere1.attach(warehouseObserver);
+        Sphere sphere1 = (Sphere) factory.create(testValue1);           //sphere1 created
+        sphere1.attach(warehouseObserver);                              // sphere1 attached
 
         List<Double> testValue2 = new ArrayList<>();
         testValue2.add(2.5);
         testValue2.add(3.5);
         testValue2.add(5.2);
         testValue2.add(15.4);
-        Sphere sphere2 = (Sphere) factory.create(testValue2);
-        sphere2.attach(warehouseObserver);
+        Sphere sphere2 = (Sphere) factory.create(testValue2);           //sphere2 created
+        sphere2.attach(warehouseObserver);                              // sphere2 attached
 
         SphereRepository repo = SphereRepository.getInstance();
-        repo.addSphere(sphere1);
+        repo.addSphere(sphere1);                                        // added to repo
         repo.addSphere(sphere2);
         runner.printList(repo.sphereList);
 
         Specification testSpecification = new RadiusSpecification(12.0, 17.0);
         List<Sphere> testSphereList = repo.query(testSpecification);
         Sphere targetSphere = testSphereList.get(0);
-        System.out.println(targetSphere);           // target print
+        System.out.println(targetSphere);                               // target print
 
         long targetId = targetSphere.getId();
         repo.changeSphere(targetId, 255.2);
 
+        Warehouse warehouse = Warehouse.getInstance();
+        warehouse.print();                                              // 1st change
+
         Point testPoint = new Point(-15.5, 187.25, 35.66);
         repo.changeSphere(1, testPoint);
+        warehouse.print();                                              // 2nd change
+
+        repo.changeSphere(2, 10.0);
+        warehouse.print();                                              //3nd change
 
         System.out.println("repo after changes: ");      //test print
         runner.printList(repo.sphereList);

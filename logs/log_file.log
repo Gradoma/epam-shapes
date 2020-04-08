@@ -1,14 +1,15 @@
-2020-04-07 22:50:31 [main] DEBUG epamtraining.shapes.factory.impl.SphereFactory - parameters: [2.5, 3.5, 5.2, 10.0]
-2020-04-07 22:50:31 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
-2020-04-07 22:50:31 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
-2020-04-07 22:50:31 [main] DEBUG by.epamtraining.shapes.entity.Sphere - Sphere with define parameters was created, radius = 10.0 , center point = by.epamtraining.shapes.entity.Point: coordinateX=2.5, coordinateY=3.5, coordinateZ=5.2
-2020-04-07 22:50:31 [main] INFO  epamtraining.shapes.factory.impl.SphereFactory - Sphere was created, sphere.id=0
-2020-04-07 22:50:31 [main] DEBUG epamtraining.shapes.factory.impl.SphereFactory - parameters: [2.5, 3.5, 5.2, 15.4]
-2020-04-07 22:50:31 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
-2020-04-07 22:50:31 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
-2020-04-07 22:50:31 [main] DEBUG by.epamtraining.shapes.entity.Sphere - Sphere with define parameters was created, radius = 15.4 , center point = by.epamtraining.shapes.entity.Point: coordinateX=2.5, coordinateY=3.5, coordinateZ=5.2
-2020-04-07 22:50:31 [main] INFO  epamtraining.shapes.factory.impl.SphereFactory - Sphere was created, sphere.id=0
-2020-04-07 22:50:31 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: 255.2
-2020-04-07 22:50:31 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
-2020-04-07 22:50:31 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
-2020-04-07 22:50:31 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: by.epamtraining.shapes.entity.Point: coordinateX=-15.5, coordinateY=187.25, coordinateZ=35.66
+2020-04-08 12:39:17 [main] DEBUG epamtraining.shapes.factory.impl.SphereFactory - parameters: [2.5, 3.5, 5.2, 10.0]
+2020-04-08 12:39:17 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-08 12:39:17 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-08 12:39:17 [main] DEBUG by.epamtraining.shapes.entity.Sphere - Sphere with define parameters was created, radius = 10.0 , center point = by.epamtraining.shapes.entity.Point: coordinateX=2.5, coordinateY=3.5, coordinateZ=5.2
+2020-04-08 12:39:17 [main] INFO  epamtraining.shapes.factory.impl.SphereFactory - Sphere was created, sphere.id=0
+2020-04-08 12:39:17 [main] DEBUG epamtraining.shapes.factory.impl.SphereFactory - parameters: [2.5, 3.5, 5.2, 15.4]
+2020-04-08 12:39:17 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-08 12:39:17 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-08 12:39:17 [main] DEBUG by.epamtraining.shapes.entity.Sphere - Sphere with define parameters was created, radius = 15.4 , center point = by.epamtraining.shapes.entity.Point: coordinateX=2.5, coordinateY=3.5, coordinateZ=5.2
+2020-04-08 12:39:17 [main] INFO  epamtraining.shapes.factory.impl.SphereFactory - Sphere was created, sphere.id=0
+2020-04-08 12:39:17 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: 255.2
+2020-04-08 12:39:17 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-08 12:39:17 [main] DEBUG by.epamtraining.shapes.entity.Point - Point with define coordinates was created
+2020-04-08 12:39:17 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: by.epamtraining.shapes.entity.Point: coordinateX=-15.5, coordinateY=187.25, coordinateZ=35.66
+2020-04-08 12:39:17 [main] INFO  by.epamtraining.shapes.entity.Sphere - center point was set, center point: 10.0
