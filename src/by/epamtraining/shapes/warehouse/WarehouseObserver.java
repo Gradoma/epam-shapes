@@ -23,17 +23,22 @@ public class WarehouseObserver implements Observer {
         SphereAction action = new SphereAction();
         double square = action.findSurfaceSquare(sphere);
         double volume = action.findVolume(sphere);
+        boolean isTouch = action.isTouchCoordinatePlane(sphere);
+        double volumeRatio = action.findVolumeRatio(sphere);
 
         Warehouse warehouse = Warehouse.getInstance();
-        List<Double> characteristics;
+        Characteristic characteristic;
         if (warehouse.contains(sphere.getId())){
-            characteristics = warehouse.getCharacteristics(sphere.getId());
+            characteristic = warehouse.getCharacteristic(sphere.getId());
         } else {
-            characteristics = new ArrayList<>();
+            characteristic = new Characteristic();
         }
-        characteristics.add(square);
-        characteristics.add(volume);
+        characteristic.setSquare(square);
+        characteristic.setVolume(volume);
+        characteristic.setTouchPlane(isTouch);
+        characteristic.setVolumeRatio(volumeRatio);
 
-        warehouse.addCharacteristic(sphere.getId(), characteristics);
+
+        warehouse.addCharacteristic(sphere.getId(), characteristic);
     }
 }

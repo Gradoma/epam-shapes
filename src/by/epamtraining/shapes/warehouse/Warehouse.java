@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Warehouse {
     private static final Warehouse instance = new Warehouse();
-    private Map<Long, List<Double>> sphereCharacteristics = new HashMap<>();
+    private Map<Long, Characteristic> sphereCharacteristics = new HashMap<>();
 
     private Warehouse(){}
 
@@ -14,7 +14,7 @@ public class Warehouse {
         return instance;
     }
 
-    public boolean addCharacteristic(long id, List<Double> characteristic){
+    public boolean addCharacteristic(long id, Characteristic characteristic){
         sphereCharacteristics.put(id, characteristic);
         return true;
     }
@@ -23,7 +23,7 @@ public class Warehouse {
         return sphereCharacteristics.containsKey(id);
     }
 
-    public List<Double> getCharacteristics (long id){
+    public Characteristic getCharacteristic (long id){
         return sphereCharacteristics.get(id);
     }
 
