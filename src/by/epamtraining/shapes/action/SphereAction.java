@@ -19,21 +19,27 @@ public class SphereAction {
 
     public boolean isTouchCoordinatePlane(Sphere sphere){
         double radius = sphere.getRadius();
-        double distance = findMinDistanceToPlane(sphere);
-        return (Double.compare(radius, distance) == 0);
+        Point centerPoint = sphere.getCenterPoint();
+        if (Double.compare(radius, centerPoint.getCoordinateX()) == 0){
+            return true;
+        } else if(Double.compare(radius, centerPoint.getCoordinateY()) == 0){
+            return true;
+        }
+        return (Double.compare(radius, centerPoint.getCoordinateZ()) == 0);
     }
 
     public double findVolumeRatio(Sphere sphere){
-        double radius = sphere.getRadius();
+        double fullRadius = sphere.getRadius();
         double distance = findMinDistanceToPlane(sphere);
         double ratio = 0.0;
-        if (Double.compare(radius, distance) != 0) {
-            double h = radius - distance;
+        if (Double.compare(fullRadius, distance) > 0) {
+            double h = fullRadius - distance;
+            double radius = Math.sqrt(Math.pow(fullRadius, 2) - Math.pow(fullRadius - h, 2));
             double partOne = Math.PI * Math.pow(h, 2.0) * (radius - (1.0 / 3.0) * h);
             double partTwo = findVolume(sphere) - partOne;
             ratio = partTwo / partOne;
         }
-        return Math.round(ratio);
+        return ratio;
     }
 
     private double findMinDistanceToPlane(Sphere sphere){
