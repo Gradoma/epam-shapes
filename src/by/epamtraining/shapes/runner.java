@@ -40,7 +40,8 @@ public class runner {
 //            System.out.print(s.getRadius() + "\n");
 //        }
         runner runner = new runner();
-        WarehouseObserver warehouseObserver = new WarehouseObserver();
+//        WarehouseObserver warehouseObserver = new WarehouseObserver();
+        Warehouse warehouse = Warehouse.getInstance();
 
         List<Double> testValue1 = new ArrayList<>();
         testValue1.add(2.5);
@@ -49,7 +50,9 @@ public class runner {
         testValue1.add(10.0);
         SphereFactory factory = new SphereFactory();
         Sphere sphere1 = (Sphere) factory.create(testValue1);           //sphere1 created
-        sphere1.attach(warehouseObserver);                              // sphere1 attached
+//        sphere1.attach(warehouseObserver);                              // sphere1 attached
+        System.out.println("1st===");
+        warehouse.print();
 
         List<Double> testValue2 = new ArrayList<>();
         testValue2.add(2.5);
@@ -57,7 +60,9 @@ public class runner {
         testValue2.add(5.2);
         testValue2.add(15.4);
         Sphere sphere2 = (Sphere) factory.create(testValue2);           //sphere2 created
-        sphere2.attach(warehouseObserver);                              // sphere2 attached
+//        sphere2.attach(warehouseObserver);                              // sphere2 attached
+        System.out.println("2nd====");
+        warehouse.print();
 
         SphereRepository repo = SphereRepository.getInstance();
         repo.addSphere(sphere1);                                        // added to repo
@@ -72,14 +77,16 @@ public class runner {
         long targetId = targetSphere.getId();
         repo.changeSphere(targetId, 255.2);
 
-        Warehouse warehouse = Warehouse.getInstance();
+        System.out.println("3nd====");
         warehouse.print();                                              // 1st change
 
         Point testPoint = new Point(-15.5, 187.25, 35.66);
         repo.changeSphere(1, testPoint);
+        System.out.println("4th====");
         warehouse.print();                                              // 2nd change
 
         repo.changeSphere(2, 10.0);
+        System.out.println("5th====");
         warehouse.print();                                              //3nd change
 
         System.out.println("repo after changes: ");      //test print

@@ -9,6 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WarehouseObserver implements Observer {
+    private static final WarehouseObserver instance = new WarehouseObserver();
+
+    private WarehouseObserver(){}
+
+    public static WarehouseObserver getInstance(){
+        return instance;
+    }
 
     @Override
     public void update(SphereEvent event){
