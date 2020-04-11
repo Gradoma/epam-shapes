@@ -1,7 +1,8 @@
-package by.epamtraining.shapes.repository;
+package by.epamtraining.shapes.repository.specification_impl;
 
 import by.epamtraining.shapes.action.SphereAction;
 import by.epamtraining.shapes.entity.Sphere;
+import by.epamtraining.shapes.repository.Specification;
 
 public class VolumeSpecification implements Specification {
     private double minVolume;

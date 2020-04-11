@@ -1,21 +1,12 @@
 package by.epamtraining.shapes;
 
-import by.epamtraining.shapes.action.SphereAction;
-import by.epamtraining.shapes.entity.Point;
-import by.epamtraining.shapes.reader.SphereReader;
-import by.epamtraining.shapes.reader.impl.FileSphereReader;
-import by.epamtraining.shapes.entity.Shape;
 import by.epamtraining.shapes.entity.Sphere;
-import by.epamtraining.shapes.factory.ShapeFactory;
-import by.epamtraining.shapes.factory.SphereHolderList;
 import by.epamtraining.shapes.factory.impl.SphereFactory;
-import by.epamtraining.shapes.parser.Parser;
-import by.epamtraining.shapes.repository.RadiusSpecification;
 import by.epamtraining.shapes.repository.Specification;
 import by.epamtraining.shapes.repository.SphereRepository;
+import by.epamtraining.shapes.repository.specification_impl.RadiusSpecification;
 import by.epamtraining.shapes.util.sorting.Sorter;
 import by.epamtraining.shapes.warehouse.Warehouse;
-import by.epamtraining.shapes.warehouse.WarehouseObserver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,10 +75,10 @@ public class runner {
 
         System.out.println("radius=" + sorter.sortByRadius(repo.sphereList));
 
-//        Specification testSpecification = new RadiusSpecification(2.0, 7.0);
-//        List<Sphere> testSphereList = repo.query(testSpecification);
-//        Sphere targetSphere = testSphereList.get(0);
-//        System.out.println(targetSphere);                               // target print
+        Specification testSpecification = new RadiusSpecification(2.0, 7.0);
+        List<Sphere> testSphereList = repo.query(testSpecification);
+        Sphere targetSphere = testSphereList.get(0);
+        System.out.println("target sphere = " + targetSphere);                               // target print
 //
 //        long targetId = targetSphere.getId();
 //        repo.changeSphere(targetId, 255.2);

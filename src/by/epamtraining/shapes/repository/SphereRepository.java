@@ -3,6 +3,7 @@ package by.epamtraining.shapes.repository;
 import by.epamtraining.shapes.entity.Point;
 import by.epamtraining.shapes.entity.Sphere;
 import by.epamtraining.shapes.exception.IncorrectDataException;
+import by.epamtraining.shapes.repository.specification_impl.IdSpecification;
 
 import java.util.ArrayList;
 import java.util.List;

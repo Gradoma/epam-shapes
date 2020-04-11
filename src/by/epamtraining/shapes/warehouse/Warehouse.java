@@ -14,7 +14,7 @@ public class Warehouse {
         return instance;
     }
 
-    public boolean addCharacteristic(long id, Characteristic characteristic){
+    public boolean putCharacteristic(long id, Characteristic characteristic){
         sphereCharacteristics.put(id, characteristic);
         return true;
     }

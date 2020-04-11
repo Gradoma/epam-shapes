@@ -5,15 +5,12 @@ import by.epamtraining.shapes.entity.Sphere;
 import by.epamtraining.shapes.util.observer.Observer;
 import by.epamtraining.shapes.util.observer.SphereEvent;
 
-import java.util.ArrayList;
-import java.util.List;
+public class ShapeObserver implements Observer {
+    private static final ShapeObserver instance = new ShapeObserver();
 
-public class WarehouseObserver implements Observer {
-    private static final WarehouseObserver instance = new WarehouseObserver();
+    private ShapeObserver(){}
 
-    private WarehouseObserver(){}
-
-    public static WarehouseObserver getInstance(){
+    public static ShapeObserver getInstance(){
         return instance;
     }
 
@@ -39,6 +36,6 @@ public class WarehouseObserver implements Observer {
         characteristic.setVolumeRatio(volumeRatio);
 
 
-        warehouse.addCharacteristic(sphere.getId(), characteristic);
+        warehouse.putCharacteristic(sphere.getId(), characteristic);
     }
 }
