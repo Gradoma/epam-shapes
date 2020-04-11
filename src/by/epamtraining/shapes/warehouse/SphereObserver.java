@@ -5,12 +5,12 @@ import by.epamtraining.shapes.entity.Sphere;
 import by.epamtraining.shapes.util.observer.Observer;
 import by.epamtraining.shapes.util.observer.SphereEvent;
 
-public class ShapeObserver implements Observer {
-    private static final ShapeObserver instance = new ShapeObserver();
+public class SphereObserver implements Observer {
+    private static final SphereObserver instance = new SphereObserver();
 
-    private ShapeObserver(){}
+    private SphereObserver(){}
 
-    public static ShapeObserver getInstance(){
+    public static SphereObserver getInstance(){
         return instance;
     }
 

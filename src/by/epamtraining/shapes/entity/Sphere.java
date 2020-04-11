@@ -4,7 +4,6 @@ import by.epamtraining.shapes.exception.IncorrectDataException;
 import by.epamtraining.shapes.util.observer.Observable;
 import by.epamtraining.shapes.util.observer.Observer;
 import by.epamtraining.shapes.util.observer.SphereEvent;
-import by.epamtraining.shapes.warehouse.ShapeObserver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -21,7 +20,6 @@ public class Sphere extends Shape implements Observable {
     public Sphere(){
         centerPoint = new Point();
         radius = 1.0;
-        attach(ShapeObserver.getInstance());
         logger.debug("default Sphere was created, radius = " + radius + " , center point = " + centerPoint);
     }
 
@@ -34,7 +32,6 @@ public class Sphere extends Shape implements Observable {
         double z = centerPoint.getCoordinateZ();
         this.centerPoint = new Point(x, y, z);
         this.radius = radius;
-        attach(ShapeObserver.getInstance());
         logger.debug("Sphere with define parameters was created, radius = " + radius + " , center point = " + centerPoint);
     }
 
@@ -94,7 +91,9 @@ public class Sphere extends Shape implements Observable {
     public void notifyObserver(){
         if (!observerList.isEmpty()){
             for (Observer current: observerList){
-                current.update(new SphereEvent(this));
+                if (current != null){
+                    current.update(new SphereEvent(this));
+                }
             }
         }
     }

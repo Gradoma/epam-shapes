@@ -6,6 +6,7 @@ import by.epamtraining.shapes.repository.Specification;
 import by.epamtraining.shapes.repository.SphereRepository;
 import by.epamtraining.shapes.repository.specification_impl.RadiusSpecification;
 import by.epamtraining.shapes.util.sorting.Sorter;
+import by.epamtraining.shapes.warehouse.SphereObserver;
 import by.epamtraining.shapes.warehouse.Warehouse;
 
 import java.util.ArrayList;
@@ -43,6 +44,7 @@ public class runner {
         testValue1.add(10.0);
         SphereFactory factory = new SphereFactory();
         Sphere sphere1 = (Sphere) factory.create(testValue1);           //sphere1 created
+        sphere1.attach(SphereObserver.getInstance());
 
         System.out.println("1st===");
         warehouse.print();
@@ -53,6 +55,7 @@ public class runner {
         testValue2.add(12.0);
         testValue2.add(6.0);
         Sphere sphere2 = (Sphere) factory.create(testValue2);           //sphere2 created
+        sphere2.attach(SphereObserver.getInstance());
 
         System.out.println("2nd====");
         warehouse.print();
@@ -63,6 +66,7 @@ public class runner {
         testValue3.add(8.0);
         testValue3.add(6.5);
         Sphere sphere3 = (Sphere) factory.create(testValue3);
+        sphere3.attach(SphereObserver.getInstance());
 
         SphereRepository repo = SphereRepository.getInstance();
         repo.addSphere(sphere1);                                        // added to repo
