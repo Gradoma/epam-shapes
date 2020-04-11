@@ -41,12 +41,55 @@ public class Characteristic {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o){
+            return true;
+        }
+        if (o == null) {
+            return false;
+        }
+        if (getClass() != o.getClass()){
+            return false;
+        }
+
+        Characteristic characteristic = (Characteristic) o;
+        if (Double.compare(characteristic.square, square) != 0) {
+            return false;
+        }
+        if (Double.compare(characteristic.volume, volume) != 0) {
+            return false;
+        }
+        if (Double.compare(characteristic.volumeRatio, volumeRatio) == 0){
+            return false;
+        }
+        return (isTouchPlane == characteristic.isTouchPlane);
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        temp = Double.doubleToLongBits(square);
+        result = (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(volume);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (isTouchPlane ? 1 : 0);
+        temp = Double.doubleToLongBits(volumeRatio);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
+
+    @Override
     public String toString() {
-        return getClass().getName() +"{" +
-                "square=" + square +
-                ", volume=" + volume +
-                ", isTouchPlane=" + isTouchPlane +
-                ", volumeRatio=" + volumeRatio +
-                '}';
+        StringBuilder stringBuilder = new StringBuilder(getClass().getName());
+        stringBuilder.append("square=");
+        stringBuilder.append(square);
+        stringBuilder.append(", volume=");
+        stringBuilder.append(volume);
+        stringBuilder.append(", isTouchPlane=");
+        stringBuilder.append(isTouchPlane);
+        stringBuilder.append(", volumeRatio=");
+        stringBuilder.append(volumeRatio);
+        return stringBuilder.toString();
     }
 }

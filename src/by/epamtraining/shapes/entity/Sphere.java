@@ -126,7 +126,7 @@ public class Sphere extends Shape implements Observable {
 
     @Override
     public int hashCode() {
-        int result = (int) id;
+        int result = (int) (id ^ (id >>> 32));
         int primeNumber = 31;
         result = primeNumber * result + ((centerPoint == null) ? 0 : centerPoint.hashCode());
         long temp = Double.doubleToLongBits(radius);
