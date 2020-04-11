@@ -6,6 +6,7 @@ import by.epamtraining.shapes.exception.IncorrectDataException;
 import by.epamtraining.shapes.repository.specification_impl.IdSpecification;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class SphereRepository {
@@ -54,6 +55,12 @@ public class SphereRepository {
 
     public boolean removeSphere(Sphere sphere){
         return sphereList.remove(sphere);
+    }
+
+    public List<Sphere> sort(Comparator comparator){
+        List<Sphere> sortedList = new ArrayList<>(sphereList);
+        sortedList.sort(comparator);
+        return sortedList;
     }
 
     public List<Sphere> query(Specification specification){

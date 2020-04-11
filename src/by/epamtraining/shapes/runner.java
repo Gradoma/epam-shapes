@@ -4,12 +4,14 @@ import by.epamtraining.shapes.entity.Sphere;
 import by.epamtraining.shapes.factory.impl.SphereFactory;
 import by.epamtraining.shapes.repository.Specification;
 import by.epamtraining.shapes.repository.SphereRepository;
+import by.epamtraining.shapes.repository.comparator.IdComparator;
+import by.epamtraining.shapes.repository.comparator.RadiusComparator;
 import by.epamtraining.shapes.repository.specification_impl.RadiusSpecification;
-import by.epamtraining.shapes.util.sorting.Sorter;
 import by.epamtraining.shapes.warehouse.SphereObserver;
 import by.epamtraining.shapes.warehouse.Warehouse;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class runner {
@@ -74,15 +76,19 @@ public class runner {
         repo.addSphere(sphere3);
         runner.printList(repo.sphereList);
 
-        Sorter sorter = new Sorter();
-        System.out.println("id=" + sorter.sortById(repo.sphereList));
+        Comparator<Sphere> idComparator = new IdComparator();
+        System.out.println("id=" + repo.sort(idComparator));
+        System.out.println("repo:");
+        runner.printList(repo.sphereList);
 
-        System.out.println("radius=" + sorter.sortByRadius(repo.sphereList));
+        Comparator<Sphere> radiusComparator = new RadiusComparator();
+        System.out.println("radius=" + repo.sort(radiusComparator));
 
-        Specification testSpecification = new RadiusSpecification(2.0, 7.0);
-        List<Sphere> testSphereList = repo.query(testSpecification);
-        Sphere targetSphere = testSphereList.get(0);
-        System.out.println("target sphere = " + targetSphere);                               // target print
+
+//        Specification testSpecification = new RadiusSpecification(2.0, 7.0);
+//        List<Sphere> testSphereList = repo.query(testSpecification);
+//        Sphere targetSphere = testSphereList.get(0);
+//        System.out.println("target sphere = " + targetSphere);                               // target print
 //
 //        long targetId = targetSphere.getId();
 //        repo.changeSphere(targetId, 255.2);
