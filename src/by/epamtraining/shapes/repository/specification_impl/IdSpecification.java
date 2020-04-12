@@ -11,12 +11,12 @@ public class IdSpecification implements Specification {
 
     public IdSpecification(long id){
         this.id = id;
-        logger.debug("created, id = " + this.id);
+        logger.info("IdSpecification created, id = " + this.id);
     }
 
     @Override
     public boolean specify(Sphere sphere){
-        logger.debug("parameter: " + sphere);
+        logger.debug("parameter: Sphere" + sphere);
         boolean result = id == sphere.getId();
         logger.debug("id == sphere.getId() : " + result);
         return result;
