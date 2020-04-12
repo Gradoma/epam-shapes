@@ -14,10 +14,11 @@ public class Point {
     }
 
     public Point(double coordinateX, double coordinateY, double coordinateZ){
+        logger.debug("parameters: " + coordinateX + ", " + coordinateY + ", " + coordinateZ);
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
         this.coordinateZ = coordinateZ;
-        logger.debug("Point with define coordinates was created");
+        logger.info("Point with define coordinates was created");
     }
 
     public double getCoordinateX() {

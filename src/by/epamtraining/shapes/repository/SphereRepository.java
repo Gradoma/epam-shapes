@@ -4,6 +4,8 @@ import by.epamtraining.shapes.entity.Point;
 import by.epamtraining.shapes.entity.Sphere;
 import by.epamtraining.shapes.exception.IncorrectDataException;
 import by.epamtraining.shapes.repository.specification_impl.IdSpecification;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -11,7 +13,8 @@ import java.util.List;
 
 public class SphereRepository {
     private static final SphereRepository instance = new SphereRepository();
-    public final List<Sphere> sphereList = new ArrayList<>();
+    private final List<Sphere> sphereList = new ArrayList<>();
+    private static Logger logger = LogManager.getLogger();
 
     private SphereRepository(){}
 
@@ -20,6 +23,7 @@ public class SphereRepository {
     }
 
     public boolean addSphere(Sphere sphere){
+        logger.info("parameter: Sphere for adding: " + sphere);
         return sphereList.add(sphere);
     }
 
@@ -38,6 +42,10 @@ public class SphereRepository {
         return true;
     }
 
+    public List<Sphere> getSphereList(){
+        return sphereList;
+    }
+
     public boolean changeSphere(long id, Point newCenterPoint){
         Specification idSpecification = new IdSpecification(id);
         List<Sphere> sphereList = query(idSpecification);
@@ -54,6 +62,7 @@ public class SphereRepository {
     }
 
     public boolean removeSphere(Sphere sphere){
+        logger.info("parameter: Sphere for removing: " + sphere);
         return sphereList.remove(sphere);
     }
 

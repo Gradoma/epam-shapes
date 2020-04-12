@@ -20,19 +20,21 @@ public class Sphere extends Shape implements Observable {
     public Sphere(){
         centerPoint = new Point();
         radius = 1.0;
-        logger.debug("default Sphere was created, radius = " + radius + " , center point = " + centerPoint);
+        logger.debug("default Sphere was created, center point = " + centerPoint + ", radius = " + radius);
     }
 
     public Sphere(Point centerPoint, double radius) throws IncorrectDataException{
         if(centerPoint == null || radius <= 0){
             throw new IncorrectDataException("invalid data for sphere creation");
         }
+        logger.debug("parameters: center point = " + centerPoint + ", radius = " + radius);
         double x = centerPoint.getCoordinateX();
         double y = centerPoint.getCoordinateY();
         double z = centerPoint.getCoordinateZ();
+        logger.info("create new Point for Sphere.centerPoint");
         this.centerPoint = new Point(x, y, z);
         this.radius = radius;
-        logger.debug("Sphere with define parameters was created, radius = " + radius + " , center point = " + centerPoint);
+        logger.debug("Sphere with define parameters was created, center point = " + centerPoint + ", radius = " + radius);
     }
 
     public long getId() {

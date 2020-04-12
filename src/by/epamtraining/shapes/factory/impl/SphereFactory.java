@@ -26,14 +26,14 @@ public class SphereFactory implements ShapeFactory {
         Shape sphere;
         try {
             sphere = new Sphere(centerPoint, radius);
-            logger.info("Sphere was created, sphere.id=" + sphere.getId());
         } catch (IncorrectDataException e) {
-            logger.fatal("IncorrectDataException was thrown");
+            logger.error("IncorrectDataException was thrown: " + e.getMessage());
             throw new SphereFactoryCreateException(e);
         }
         IdGenerator generator = new IdGenerator();
         long id = generator.generateId();
         sphere.setId(id);
+        logger.info("Sphere was created, sphere.id=" + sphere.getId());
         return sphere;
     }
 }

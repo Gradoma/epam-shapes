@@ -18,11 +18,14 @@ public class Parser {
         List<List<Double>> sphereValuesList = new ArrayList<List<Double>>();
         Matcher matcher;
         for (String s : listString){
+            logger.info("inside for, String: " + s);
             matcher = SPHERE_STRING.matcher(s);
             if(matcher.matches()){
                 logger.info("String was matched successful");
                 List<Double> values = collectValues(s);
                 sphereValuesList.add(values);
+            } else {
+                logger.debug("Matching failed");
             }
         }
         logger.info("result List parameters for Sphere creation: " + sphereValuesList);
@@ -36,7 +39,7 @@ public class Parser {
         for (String s: valuesArr){
             valuesList.add(Double.parseDouble(s));
         }
-        logger.info("result List of values: " + valuesList);
+        logger.info("result List of values for sphere: " + valuesList);
         return valuesList;
     }
 }
