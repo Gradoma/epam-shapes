@@ -28,15 +28,19 @@ public class SphereAction {
         logger.debug("parameter: Sphere: " + sphere);
         double radius = sphere.getRadius();
         Point centerPoint = sphere.getCenterPoint();
-        if (Double.compare(radius, centerPoint.getCoordinateX()) == 0){
+        if (Double.compare(radius, Math.abs(centerPoint.getCoordinateX())) == 0){
             logger.debug("Sphere touch YZ plane");
             return true;
-        } else if(Double.compare(radius, centerPoint.getCoordinateY()) == 0){
+        } else if(Double.compare(radius, Math.abs(centerPoint.getCoordinateY())) == 0){
             logger.debug("Sphere touch XZ plane");
             return true;
         }
-        boolean result = Double.compare(radius, centerPoint.getCoordinateZ()) == 0;
-        logger.debug("Sphere touch XY plane");
+        boolean result = Double.compare(radius, Math.abs(centerPoint.getCoordinateZ())) == 0;
+        if (result){
+            logger.debug("Sphere touch XY plane");
+        } else {
+            logger.debug("Sphere doesn't touch any plane");
+        }
         return result;
     }
 

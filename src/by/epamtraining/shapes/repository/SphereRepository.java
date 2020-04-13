@@ -87,7 +87,7 @@ public class SphereRepository {
     }
 
     public List<Sphere> query(Specification specification){
-        logger.debug("parameter: Specification: " + specification);
+        logger.debug("parameter: Specification: " + specification.getClass().getName());
         List<Sphere> resultList = new ArrayList<>();
         for (Sphere current : sphereList){
             logger.info("inside for: Sphere: " + current);

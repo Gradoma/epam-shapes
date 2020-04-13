@@ -1,5 +1,6 @@
 package by.epamtraining.shapes;
 
+import by.epamtraining.shapes.action.SphereAction;
 import by.epamtraining.shapes.entity.Shape;
 import by.epamtraining.shapes.entity.Sphere;
 import by.epamtraining.shapes.factory.impl.SphereFactory;
@@ -10,6 +11,7 @@ import by.epamtraining.shapes.repository.Specification;
 import by.epamtraining.shapes.repository.SphereRepository;
 import by.epamtraining.shapes.repository.comparator.IdComparator;
 import by.epamtraining.shapes.repository.comparator.RadiusComparator;
+import by.epamtraining.shapes.repository.specification_impl.IdSpecification;
 import by.epamtraining.shapes.repository.specification_impl.RadiusSpecification;
 import by.epamtraining.shapes.warehouse.SphereObserver;
 import by.epamtraining.shapes.warehouse.Warehouse;
@@ -37,6 +39,13 @@ public class runner {
 
         runner runner = new runner();
         runner.printList(repo.getSphereList());
+
+        Specification<Sphere> idSpecif = new IdSpecification(3);
+        List<Sphere> idList = repo.query(idSpecif);
+        Sphere testSphere = idList.get(0);
+
+        SphereAction action = new SphereAction();
+        System.out.println(action.isTouchCoordinatePlane(testSphere));
 
 
 //        Warehouse warehouse = Warehouse.getInstance();
