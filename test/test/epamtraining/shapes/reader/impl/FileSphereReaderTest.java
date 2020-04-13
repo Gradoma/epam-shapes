@@ -1,4 +1,4 @@
-package test.epamtraining.shapes.dao.impl;
+package test.epamtraining.shapes.reader.impl;
 
 import by.epamtraining.shapes.reader.impl.FileSphereReader;
 import by.epamtraining.shapes.exception.DaoException;
@@ -22,11 +22,11 @@ public class FileSphereReaderTest {
         String path = "test_resource/testfile.txt";
         String[] expectedArr = {};
         List<String> expected = Arrays.asList(expectedArr);
-        List<String> actual;
+        List<String> actual = null;
             try{
                 actual = fileSphereDao.getStrings(path);
             } catch (DaoException e){
-                actual = null;
+                Assert.fail();
             }
         Assert.assertEquals(actual, expected);
     }
@@ -35,11 +35,5 @@ public class FileSphereReaderTest {
     public void testGetStringsNull() throws DaoException{
         String path = null;
         fileSphereDao.getStrings(path);
-    }
-
-    @Test
-    public void testGetStringsFileDoesntExist(){
-        String path = "resource/wrong.txt";
-
     }
 }

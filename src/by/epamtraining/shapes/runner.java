@@ -45,8 +45,7 @@ public class runner {
         Sphere testSphere = idList.get(0);
 
         SphereAction action = new SphereAction();
-        System.out.println(action.isTouchCoordinatePlane(testSphere));
-
+        action.isTouchCoordinatePlane(testSphere);
 
 //        Warehouse warehouse = Warehouse.getInstance();
 //

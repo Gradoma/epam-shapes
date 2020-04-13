@@ -26,8 +26,4 @@ public class Warehouse {
     public Characteristic getCharacteristic (long id){
         return sphereCharacteristics.get(id);
     }
-
-    public void print(){
-        System.out.println("map = " + sphereCharacteristics);
-    }
 }

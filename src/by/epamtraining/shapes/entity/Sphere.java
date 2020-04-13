@@ -25,6 +25,7 @@ public class Sphere extends Shape implements Observable {
 
     public Sphere(Point centerPoint, double radius) throws IncorrectDataException{
         if(centerPoint == null || radius <= 0){
+            logger.error("centerPoint is null reference or radius less or equal zero");
             throw new IncorrectDataException("invalid data for sphere creation");
         }
         logger.debug("parameters: center point = " + centerPoint + ", radius = " + radius);

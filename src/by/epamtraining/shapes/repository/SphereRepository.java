@@ -22,6 +22,10 @@ public class SphereRepository {
         return instance;
     }
 
+    public List<Sphere> getSphereList(){
+        return sphereList;
+    }
+
     public boolean addSphere(Sphere sphere){
         logger.debug("parameter: Sphere for adding: " + sphere);
         return sphereList.add(sphere);
@@ -45,10 +49,6 @@ public class SphereRepository {
             return false;
         }
         return true;
-    }
-
-    public List<Sphere> getSphereList(){
-        return sphereList;
     }
 
     public boolean changeSphere(long id, Point newCenterPoint){

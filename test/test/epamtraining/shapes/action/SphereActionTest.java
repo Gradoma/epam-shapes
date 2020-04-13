@@ -1,4 +1,4 @@
-package test.epamtraining.shapes.service;
+package test.epamtraining.shapes.action;
 
 import by.epamtraining.shapes.entity.Point;
 import by.epamtraining.shapes.entity.Sphere;
