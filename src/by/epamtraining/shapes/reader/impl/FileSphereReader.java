@@ -26,15 +26,19 @@ public class FileSphereReader implements SphereReader {
         }
         Path path;
         FileValidator fileValidator = new FileValidator();
-        if (fileValidator.isFileExist(fileName)) {
-            logger.info("file was founded");
-            path = Paths.get(fileName);
-        } else {
+        if (!fileValidator.isFileExist(fileName)) {
             logger.info("file wasn't found, try to read default file: " + DEFAULT_FILENAME);
             path = Paths.get(DEFAULT_FILENAME);
+        } else {
+            logger.info("file was founded");
+            path = Paths.get(fileName);
         }
 
-        List<String> linesList = null;
+        if (fileValidator.isEmptyFile(path)){
+            throw new EmptySourceException("Source file is empty");
+        }
+
+        List<String> linesList;
         try{
             logger.info("read all lines was successful");
             linesList = Files.readAllLines(path);
@@ -42,11 +46,12 @@ public class FileSphereReader implements SphereReader {
             logger.fatal("IOException while readAllLines method");
             throw new DaoException(e);
         }
+        return linesList;
 
-        if (linesList.isEmpty()){
-            throw new EmptySourceException("Source file is empty");
-        } else {
-            return linesList;
-        }
+//        if (linesList.isEmpty()){
+//            throw new EmptySourceException("Source file is empty");
+//        } else {
+//            return linesList;
+//        }
     }
 }

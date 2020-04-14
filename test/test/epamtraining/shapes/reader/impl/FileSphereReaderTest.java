@@ -18,7 +18,7 @@ public class FileSphereReaderTest {
         fileSphereDao = new FileSphereReader();
     }
 
-    @Test (dependsOnGroups = {"Validation"})
+    @Test (dependsOnGroups = {"Validation"}, groups = {"Reader"})
     public void testGetStringsPositive() {
         String path = "test_resource/testfile.txt";
         String[] expectedArr = {"123 613 56", "165 05465 3321", "32 65132 6132"};
@@ -32,13 +32,13 @@ public class FileSphereReaderTest {
         Assert.assertEquals(actual, expected);
     }
 
-    @Test(expectedExceptions = DaoException.class, dependsOnGroups = {"Validation"})
+    @Test(expectedExceptions = DaoException.class)
     public void testGetStringsNull() throws DaoException{
         String path = null;
         fileSphereDao.getStrings(path);
     }
 
-    @Test(expectedExceptions = EmptySourceException.class, dependsOnGroups = {"Validation"})
+    @Test(expectedExceptions = EmptySourceException.class)
     public void testGetStringsEmptyFile() throws DaoException{
         String path = "test_resource/empty.txt";
         fileSphereDao.getStrings(path);

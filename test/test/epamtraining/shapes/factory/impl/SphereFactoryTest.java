@@ -5,6 +5,7 @@ import by.epamtraining.shapes.entity.Sphere;
 import by.epamtraining.shapes.exception.IncorrectDataException;
 import by.epamtraining.shapes.exception.SphereFactoryCreateException;
 import by.epamtraining.shapes.factory.impl.SphereFactory;
+import by.epamtraining.shapes.warehouse.SphereObserver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -40,7 +41,7 @@ public class SphereFactoryTest {
         testValue.add(radius);
     }
 
-    @Test (priority = 1)
+    @Test (priority = 1, dependsOnGroups = "Parser", groups = "Factory")
     public void testCreatePositive() {
         Point expectedCenterPoint = new Point(x, y, z);
         Sphere expectedSphere = null;

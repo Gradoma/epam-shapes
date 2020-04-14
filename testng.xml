@@ -3,14 +3,14 @@
 
 <suite name="TestSuite">
     <test name="Test1">
-        <!--<groups>-->
-            <!--<run>-->
-                <!--<include name="Validation"/>-->
-            <!--</run>-->
-        <!--</groups>-->
         <classes>
-            <class name="test.epamtraining.shapes.validation.ValidatorTest"/>
+            <class name="test.epamtraining.shapes.validation.FileValidatorTest"/>
             <class name="test.epamtraining.shapes.reader.impl.FileSphereReaderTest"/>
+            <class name="test.epamtraining.shapes.parser.ParserTest"/>
+            <class name="test.epamtraining.shapes.factory.impl.SphereFactoryTest"/>
+            <class name="test.epamtraining.shapes.repository.SphereRepositoryTest"/>
+            <class name="test.epamtraining.shapes.action.SphereActionTest"/>
+            <class name="test.epamtraining.shapes.warehouse.WarehouseTest"/>
         </classes>
     </test>
 </suite>

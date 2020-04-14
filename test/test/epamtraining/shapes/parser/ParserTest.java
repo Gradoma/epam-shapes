@@ -13,7 +13,7 @@ import static org.testng.Assert.*;
 
 public class ParserTest {
 
-    @Test
+    @Test (dependsOnGroups = "Reader", groups = {"Parser"})
     public void testParseValue() {
         String testString1 = "3.4 4 2.1 2.7";
         String testString2 = "-2.1 7 5.1 3.1";

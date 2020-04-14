@@ -8,10 +8,7 @@ import by.epamtraining.shapes.repository.comparator.IdComparator;
 import by.epamtraining.shapes.repository.comparator.RadiusComparator;
 import by.epamtraining.shapes.repository.specification_impl.IdSpecification;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -30,7 +27,7 @@ public class SphereRepositoryTest {
     double r2 = 3.0;
     double r3 = 1.0;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp(){
         try{
             s1 = new Sphere(p1, r1);
@@ -44,15 +41,29 @@ public class SphereRepositoryTest {
         s3.setId(3);
 
         SphereRepository repository = SphereRepository.getInstance();
-        if (!repository.getSphereList().isEmpty()){
-            repository.getSphereList().clear();
-        }
+//        if (!repository.getSphereList().isEmpty()){
+//            repository.getSphereList().clear();
+//        }
         repository.addSphere(s2);
         repository.addSphere(s1);
         repository.addSphere(s3);
     }
 
-    @Test
+    @AfterMethod
+    public void setRepositoryToDefault(){
+        try{
+            s1.setCenterPoint(p1);
+            s1.setRadius(r1);
+            s2.setCenterPoint(p2);
+            s2.setRadius(r2);
+            s3.setCenterPoint(p3);
+            s3.setRadius(r3);
+        } catch (IncorrectDataException e){
+            Assert.fail();
+        }
+    }
+
+    @Test (dependsOnGroups = "Factory", groups = "Repository")
     public void testChangeSphereByRadiusPositive() {
         long id = 2;
         double newRadius = 10.0;
@@ -60,7 +71,7 @@ public class SphereRepositoryTest {
         Assert.assertTrue(repository.changeSphere(id, newRadius));
     }
 
-    @Test
+    @Test (dependsOnGroups = "Factory", groups = "Repository")
     public void testChangeSphereByRadiusIncorrectId() {
         long id = 5;
         double newRadius = 10.0;
@@ -68,7 +79,7 @@ public class SphereRepositoryTest {
         Assert.assertFalse(repository.changeSphere(id, newRadius));
     }
 
-    @Test
+    @Test (dependsOnGroups = "Factory", groups = "Repository")
     public void testChangeSphereByRadiusIncorrectRadius() {
         long id = 2;
         double newRadius = -10.0;
@@ -76,7 +87,7 @@ public class SphereRepositoryTest {
         Assert.assertFalse(repository.changeSphere(id, newRadius));
     }
 
-    @Test
+    @Test (dependsOnGroups = "Factory", groups = "Repository")
     public void testChangeSphereByCenterPointPositive() {
         long id = 3;
         Point newPoint = new Point(-10, -10, -10);
@@ -84,7 +95,7 @@ public class SphereRepositoryTest {
         Assert.assertTrue(repository.changeSphere(id, newPoint));
     }
 
-    @Test
+    @Test (dependsOnGroups = "Factory", groups = "Repository")
     public void testChangeSphereByCenterPointIncorrectId() {
         long id = 6;
         Point newPoint = new Point(-10, -10, -10);
@@ -92,7 +103,7 @@ public class SphereRepositoryTest {
         Assert.assertFalse(repository.changeSphere(id, newPoint));
     }
 
-    @Test
+    @Test (dependsOnGroups = "Factory", groups = "Repository")
     public void testChangeSphereByCenterPointNullPoint() {
         long id = 6;
         Point newPoint = null;
@@ -100,7 +111,7 @@ public class SphereRepositoryTest {
         Assert.assertFalse(repository.changeSphere(id, newPoint));
     }
 
-    @Test
+    @Test (dependsOnGroups = "Factory", groups = "Repository")
     public void testSortById() {
         Sphere s1 = null;
         Sphere s2 = null;
@@ -127,7 +138,7 @@ public class SphereRepositoryTest {
         Assert.assertEquals(actual, expected);
     }
 
-    @Test
+    @Test (dependsOnGroups = "Factory", groups = "Repository")
     public void testSortByRadius() {
         Sphere s1 = null;
         Sphere s2 = null;

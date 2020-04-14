@@ -17,7 +17,7 @@ public class SphereActionTest {
         sphereAction = new SphereAction();
     }
 
-    @Test
+    @Test (dependsOnGroups = "Factory")
     public void testFindSurfaceSquare() {
         double actual = sphereAction.findSurfaceSquare(sphere);
         double expected = 12.566;
@@ -25,7 +25,7 @@ public class SphereActionTest {
         Assert.assertEquals(actual, expected, delta);
     }
 
-    @Test
+    @Test (dependsOnGroups = "Factory")
     public void testFindVolume() {
         double actual = sphereAction.findVolume(sphere);
         double expected = 4.188;
@@ -33,7 +33,7 @@ public class SphereActionTest {
         Assert.assertEquals(actual, expected, delta);
     }
 
-    @Test
+    @Test (dependsOnGroups = "Factory")
     public void testIsTouchCoordinatePlane() {
         Point point = new Point(1.0, 1.0, 1.0);
         boolean actual;
@@ -47,7 +47,7 @@ public class SphereActionTest {
         Assert.assertTrue(actual);
     }
 
-    @Test
+    @Test (dependsOnGroups = "Factory")
     public void testFindVolumeRatio() {
         double actual = sphereAction.findVolumeRatio(sphere);
         double expected = 1.0;

@@ -101,7 +101,7 @@ public class Sphere extends Shape implements Observable {
         }
     }
 
-    @Override
+        @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -119,6 +119,9 @@ public class Sphere extends Shape implements Observable {
         if (Double.compare(sphere.radius, radius) != 0) {
             return false;
         }
+        if (!observerList.equals(sphere.observerList)){
+            return false;
+        }
         if (centerPoint == null){
             return (sphere.centerPoint == null);
         } else {
@@ -133,6 +136,7 @@ public class Sphere extends Shape implements Observable {
         result = primeNumber * result + ((centerPoint == null) ? 0 : centerPoint.hashCode());
         long temp = Double.doubleToLongBits(radius);
         result = primeNumber * result + (int) (temp ^ (temp >>> 32));
+        result = primeNumber * result + observerList.hashCode();
         return result;
     }
 
