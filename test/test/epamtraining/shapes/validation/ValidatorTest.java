@@ -14,12 +14,12 @@ import static org.testng.Assert.*;
 public class ValidatorTest {
     Validator validator;
 
-    @BeforeClass
+    @BeforeClass (groups = {"Validation"})
     public void setUp(){
         validator = new Validator();
     }
 
-    @Test
+    @Test (groups = {"Validation"})
     public void testCheckList() {
         List<String> expectedList = new ArrayList<>();
         expectedList.add("1 a");
@@ -34,13 +34,13 @@ public class ValidatorTest {
         Assert.assertEquals(expectedList, actualList);
     }
 
-    @Test (expectedExceptions = ValidationException.class)
+    @Test (expectedExceptions = ValidationException.class, groups = {"Validation"})
     public void testCheckListException() throws ValidationException{
         List<String> epmtyList = new ArrayList<>();
         validator.checkList(epmtyList);
     }
 
-    @Test
+    @Test (groups = {"Validation"})
     public void testCheckListEmptyString() {
         List<String> testList = new ArrayList<>();
         testList.add("1 a");
@@ -59,7 +59,7 @@ public class ValidatorTest {
         Assert.assertEquals(expectedList, actualList);
     }
 
-    @Test
+    @Test (groups = {"Validation"})
     public void testCheckListSpace() {
         List<String> testList = new ArrayList<>();
         testList.add("1 a");

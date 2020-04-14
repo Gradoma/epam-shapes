@@ -1,5 +1,6 @@
 package by.epamtraining.shapes.reader.impl;
 
+import by.epamtraining.shapes.exception.EmptySourceException;
 import by.epamtraining.shapes.reader.SphereReader;
 import by.epamtraining.shapes.exception.DaoException;
 import by.epamtraining.shapes.validation.FileValidator;
@@ -30,15 +31,22 @@ public class FileSphereReader implements SphereReader {
             path = Paths.get(fileName);
         } else {
             logger.info("file wasn't found, try to read default file: " + DEFAULT_FILENAME);
-            path = Paths.get(DEFAULT_FILENAME);         // КАК ТЕСТИРОВАТЬ ????
+            path = Paths.get(DEFAULT_FILENAME);
         }
 
+        List<String> linesList = null;
         try{
             logger.info("read all lines was successful");
-            return Files.readAllLines(path);
+            linesList = Files.readAllLines(path);
         }catch (IOException e){
             logger.fatal("IOException while readAllLines method");
             throw new DaoException(e);
+        }
+
+        if (linesList.isEmpty()){
+            throw new EmptySourceException("Source file is empty");
+        } else {
+            return linesList;
         }
     }
 }

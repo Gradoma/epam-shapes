@@ -9,6 +9,7 @@ import by.epamtraining.shapes.repository.comparator.RadiusComparator;
 import by.epamtraining.shapes.repository.specification_impl.IdSpecification;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -29,7 +30,7 @@ public class SphereRepositoryTest {
     double r2 = 3.0;
     double r3 = 1.0;
 
-    @BeforeClass
+    @BeforeMethod
     public void setUp(){
         try{
             s1 = new Sphere(p1, r1);
@@ -101,7 +102,6 @@ public class SphereRepositoryTest {
 
     @Test
     public void testSortById() {
-        setUp();
         Sphere s1 = null;
         Sphere s2 = null;
         Sphere s3 = null;
@@ -129,7 +129,6 @@ public class SphereRepositoryTest {
 
     @Test
     public void testSortByRadius() {
-        setUp();
         Sphere s1 = null;
         Sphere s2 = null;
         Sphere s3 = null;
